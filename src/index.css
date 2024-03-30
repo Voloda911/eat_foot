@@ -1,0 +1,41 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: aquamarine;
+}
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* background-color: rgb(234, 228, 219); */
+}
+.box_info {
+  display: none;
+}
+.remove {
+  display: block;
+  position: absolute;
+  animation: fadeOut 1.3s forwards;
+}
+.open {
+  display: block;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    left: -50%;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+  to {
+    opacity: 0;
+    left: -50%;
+  }
+}
