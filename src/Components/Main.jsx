@@ -453,8 +453,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {lunchMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {lunchMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -517,8 +521,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {sandwichsAndBurgersMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {sandwichsAndBurgersMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -581,8 +589,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {saladsMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {saladsMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -645,8 +657,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {burgerMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {burgerMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -709,8 +725,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {drinksMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {drinksMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -773,8 +793,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {gritsBowlMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {gritsBowlMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -837,8 +861,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {comboMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {comboMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
@@ -901,8 +929,12 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {seafoodMenu.map((item) => (
-                <div className="" style={{ width: "270px", margin: "15px 0" }}>
+              {seafoodMenu.map((item, index) => (
+                <div
+                  key={item.id || index}
+                  className=""
+                  style={{ width: "270px", margin: "15px 0" }}
+                >
                   <img
                     src={item.imageUrl}
                     alt=""
