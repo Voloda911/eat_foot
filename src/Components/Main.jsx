@@ -200,7 +200,13 @@ function OrderDetails({
             </div>
           )}
         </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
+          quis nesciunt dicta sapiente veniam sequi inventore? Nihil delectus
+          quisquam veritatis.
+        </div>
       </div>
+      <button className="btn btn-dark"></button>
     </>
   );
 }
