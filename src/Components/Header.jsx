@@ -154,18 +154,18 @@ function Header() {
           }}
         >
           <a
-            href=""
-            className="btn btn-outline-danger"
+            href="#all_menu"
+            className="btn btn-outline-dark"
             style={{ padding: "10px 60px" }}
           >
             delivary
           </a>
           <a
-            href=""
+            href="#all_menu"
             style={{ padding: "10px 60px" }}
-            className="btn btn-outline-danger"
+            className="btn btn-dark"
           >
-            delivary
+            menu
           </a>
         </div>
         <div

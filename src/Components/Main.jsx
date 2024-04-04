@@ -167,11 +167,12 @@ function OrderDetails({
               margin: "20px 0 0 0 ",
               borderRadius: "15px",
             }}
-            href=""
+            href="#"
           >
             delivery
           </a>
-          <button
+          <a
+            href="#"
             variant="primary"
             onClick={toggleChose}
             className="btn btn-outline-dark"
@@ -182,7 +183,7 @@ function OrderDetails({
             }}
           >
             Pick up
-          </button>
+          </a>
 
           {choseTime && (
             <div style={{}}>
@@ -200,13 +201,7 @@ function OrderDetails({
             </div>
           )}
         </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-          quis nesciunt dicta sapiente veniam sequi inventore? Nihil delectus
-          quisquam veritatis.
-        </div>
       </div>
-      <button className="btn btn-dark"></button>
     </>
   );
 }
@@ -220,99 +215,92 @@ function Main() {
     "sandwichs",
     "salads",
     "burgers",
-    "grits bowl",
-    "seafood",
+    "asia",
+    "desserts",
     "combo",
   ].includes(currentMenu);
 
   const lunchMenu = [
     {
-      name: "w",
-      price: 232,
-      imageUrl: "https://via.placeholder.com/270",
-    },
-    {
-      name: "Блюдо 2",
-      price: 250,
+      name: "fish and vegetables ",
+      price: 17.3,
       imageUrl:
-        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Блюдо 2",
-      price: 250,
+      name: "fried potatoes with kurikia ",
+      price: 11.5,
       imageUrl:
-        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/1352270/pexels-photo-1352270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Блюдо 2",
-      price: 250,
+      name: "meat and vegetable sandwich ",
+      price: 9.8,
       imageUrl:
-        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/1988624/pexels-photo-1988624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Блюдо 2",
-      price: 250,
+      name: "poached eggs",
+      price: 14.9,
       imageUrl:
-        "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      name: "Блюдо 3",
-      price: 190,
-      imageUrl: "https://via.placeholder.com/270",
-    },
-    {
-      name: "Блюдо 4",
-      price: 300,
-      imageUrl: "https://via.placeholder.com/270",
+        "https://images.pexels.com/photos/2067400/pexels-photo-2067400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
 
   const sandwichsAndBurgersMenu = [
     {
-      name: "Сэндвич 1",
-      price: 120,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "meat and vegetable sandwich ",
+      price: 9.8,
+      imageUrl:
+        "https://images.pexels.com/photos/1988624/pexels-photo-1988624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Бургер 1",
-      price: 200,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "bacon and pork burger ",
+      price: 11.29,
+      imageUrl:
+        "https://images.pexels.com/photos/580612/pexels-photo-580612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+
+    {
+      name: "double burger with pork",
+      price: 13.1,
+      imageUrl:
+        "https://images.pexels.com/photos/2089717/pexels-photo-2089717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Сэндвич 2",
-      price: 150,
-      imageUrl: "",
-    },
-    {
-      name: "Бургер 2",
-      price: 250,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "double chicken",
+      price: 12.3,
+      imageUrl:
+        "https://images.pexels.com/photos/2657960/pexels-photo-2657960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
 
   const saladsMenu = [
     {
-      name: "Салат с курицей",
-      price: 180,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "Azaita herb salad ",
+      price: 11.2,
+      imageUrl:
+        "https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Греческий салат",
-      price: 160,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "olive salad",
+      price: 9.2,
+      imageUrl:
+        "https://images.pexels.com/photos/396132/pexels-photo-396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Цезарь",
-      price: 200,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "classic salad",
+      price: 8.6,
+      imageUrl:
+        "https://images.pexels.com/photos/8535717/pexels-photo-8535717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
 
-  const burgerMenu = [
+  const asiamenu = [
     {
-      name: "Салат с курицей",
-      price: 180,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "Azaita herb salad ",
+      imageUrl:
+        "https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       name: "Греческий салат",
@@ -327,58 +315,82 @@ function Main() {
   ];
   const drinksMenu = [
     {
-      name: "Лимонад",
-      price: 50,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "lemonate",
+      price: 4.3,
+      imageUrl:
+        "https://images.pexels.com/photos/2336670/pexels-photo-2336670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Кофе",
-      price: 70,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "cherry lemonade ",
+      price: 5,
+      imageUrl:
+        "https://images.pexels.com/photos/6542713/pexels-photo-6542713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Чай",
-      price: 40,
-      imageUrl: "https://via.placeholder.com/270",
-    },
-  ];
-
-  const gritsBowlMenu = [
-    {
-      name: "Каша с фруктами",
-      price: 90,
-      imageUrl: "https://via.placeholder.com/270",
-    },
-    {
-      name: "Каша с орехами",
-      price: 100,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "specialty lemonate",
+      price: 4.9,
+      imageUrl:
+        "https://images.pexels.com/photos/6542774/pexels-photo-6542774.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
   ];
 
-  const comboMenu = [
+  const asiaMenu = [
     {
-      name: "Комбо завтрак",
-      price: 250,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "california roll.  8 pieces",
+      price: 13.4,
+      imageUrl:
+        "https://images.pexels.com/photos/1148086/pexels-photo-1148086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      name: "Комбо обед",
-      price: 300,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "Hissho roll.  8 pieces",
+      price: 12.1,
+      imageUrl:
+        "https://images.pexels.com/photos/1028427/pexels-photo-1028427.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "sushi",
+      price: 9.9,
+      imageUrl:
+        "https://images.pexels.com/photos/2098143/pexels-photo-2098143.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "roll with caviar",
+      price: 12.3,
+      imageUrl:
+        "https://images.pexels.com/photos/670702/pexels-photo-670702.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "shrimp sushi  2 pieces",
+      price: 4,
+      imageUrl:
+        "https://images.pexels.com/photos/359992/pexels-photo-359992.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "roll with shrimp ",
+      price: 11,
+      imageUrl:
+        "https://images.pexels.com/photos/1148087/pexels-photo-1148087.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
   ];
 
-  const seafoodMenu = [
+  const dessertsMenu = [
     {
-      name: "Креветки",
-      price: 350,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "strawberry cheesecake ",
+      price: 5.2,
+      imageUrl:
+        "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-      name: "Мидии",
-      price: 300,
-      imageUrl: "https://via.placeholder.com/270",
+      name: "chocolate pecan cheesecake",
+      price: 6,
+      imageUrl:
+        "https://images.pexels.com/photos/2373520/pexels-photo-2373520.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "chocolate cheesecake",
+      price: 6,
+      imageUrl:
+        "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
   function calculateTotal(orders) {
@@ -388,7 +400,7 @@ function Main() {
     );
   }
 
-  const hendelMenuId = (menuId) => {
+  const handleMenuId = (menuId) => {
     setCurrentMenu(menuId);
   };
   const handleAddOrder = (itemName, itemPrice, event) => {
@@ -434,6 +446,7 @@ function Main() {
       case "lanch":
         return (
           <div
+            id="lanch"
             className="left_side"
             style={{
               width: "100%",
@@ -657,7 +670,7 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {burgerMenu.map((item, index) => (
+              {asiamenu.map((item, index) => (
                 <div
                   key={item.id || index}
                   className=""
@@ -771,7 +784,7 @@ function Main() {
             />
           </div>
         );
-      case "grits bowl":
+      case "asia":
         return (
           <div
             className="left_side"
@@ -793,7 +806,7 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {gritsBowlMenu.map((item, index) => (
+              {asiaMenu.map((item, index) => (
                 <div
                   key={item.id || index}
                   className=""
@@ -839,7 +852,7 @@ function Main() {
             />
           </div>
         );
-      case "combo":
+      case "desserts":
         return (
           <div
             className="left_side"
@@ -861,75 +874,7 @@ function Main() {
                 gap: "5px",
               }}
             >
-              {comboMenu.map((item, index) => (
-                <div
-                  key={item.id || index}
-                  className=""
-                  style={{ width: "270px", margin: "15px 0" }}
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt=""
-                    style={{
-                      width: "270px",
-                      height: "270px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div style={{ width: "250px" }}>{item.name}</div>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <p style={{ margin: "5px 0 0 0" }}>
-                      <span>$</span> {item.price}
-                    </p>
-                    <a
-                      onClick={(event) =>
-                        handleAddOrder(item.name, item.price, event)
-                      }
-                      href=""
-                      className="btn btn-dark"
-                    >
-                      {" "}
-                      add to order
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* order */}
-            <OrderDetails
-              selectedOrders={selectedOrders}
-              handleAddOrder={handleAddOrder}
-              handleRemoveOrder={handleRemoveOrder}
-              handleClearAll={handleClearAll}
-              calculateTotal={calculateTotal}
-            />
-          </div>
-        );
-      case "seafood":
-        return (
-          <div
-            className="left_side"
-            style={{
-              width: "100%",
-              backgroundColor: "transparent",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <div
-              id="lanch"
-              style={{
-                width: "70%",
-                overflow: "hidden",
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "5px",
-              }}
-            >
-              {seafoodMenu.map((item, index) => (
+              {dessertsMenu.map((item, index) => (
                 <div
                   key={item.id || index}
                   className=""
@@ -1006,7 +951,7 @@ function Main() {
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("lanch");
+                handleMenuId("lanch");
               }}
               href=""
             >
@@ -1016,7 +961,7 @@ function Main() {
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("sandwichs");
+                handleMenuId("sandwichs");
               }}
               href=""
             >
@@ -1026,7 +971,7 @@ function Main() {
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("salads");
+                handleMenuId("salads");
               }}
               href=""
             >
@@ -1036,17 +981,7 @@ function Main() {
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("burgers");
-              }}
-              href=""
-            >
-              burgers
-            </a>
-            <a
-              className="btn btn-outline-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                hendelMenuId("drinks");
+                handleMenuId("drinks");
               }}
               href=""
             >
@@ -1056,31 +991,22 @@ function Main() {
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("grits bowl");
+                handleMenuId("asia");
               }}
               href=""
             >
-              grits bowl
+              asia
             </a>
+
             <a
               className="btn btn-outline-secondary"
               onClick={(e) => {
                 e.preventDefault();
-                hendelMenuId("combo");
+                handleMenuId("desserts");
               }}
               href=""
             >
-              combo{" "}
-            </a>{" "}
-            <a
-              className="btn btn-outline-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                hendelMenuId("seafood");
-              }}
-              href=""
-            >
-              seafood{" "}
+              desserts{" "}
             </a>
           </div>
           <a
@@ -1088,7 +1014,7 @@ function Main() {
             className="btn btn-outline-secondary"
             onClick={(e) => {
               e.preventDefault();
-              hendelMenuId("menu");
+              handleMenuId("menu");
             }}
             href=""
           >
@@ -1097,7 +1023,9 @@ function Main() {
 
           {renderContent()}
 
-          {shouldShowAllMenu && <AllMenu />}
+          {shouldShowAllMenu && (
+            <AllMenu currentMenu={currentMenu} handleMenuId={handleMenuId} />
+          )}
         </div>
       </div>
     </div>

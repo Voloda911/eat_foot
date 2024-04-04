@@ -1,24 +1,27 @@
 import { useState } from "react";
-function AllMenu({ currentMenu }) {
+function AllMenu({ currentMenu, handleMenuId }) {
   return (
     <>
       <div
+        id="all_menu"
         className="menu_all"
         style={{
           width: "100%",
-          height: "100vh",
           backgroundColor: "transparent",
         }}
       >
         <div
+          className="menu__"
           style={{
             display: "flex",
+            margin: "3em 0 0 0",
             justifyContent: "center",
-            margin: "5em 0 0 0 ",
+            gridGap: "1rem",
+            flexWrap: "wrap",
           }}
         >
           <div
-            className=""
+            onClick={() => handleMenuId("lanch")}
             style={{
               position: "relative",
               display: "block",
@@ -26,19 +29,21 @@ function AllMenu({ currentMenu }) {
               cursor: "pointer",
             }}
           >
-            <img
-              src={
-                "https://media.istockphoto.com/id/1435215487/photo/fried-eggs-on-a-bright-background-with-tomatoes-onions-and-bread.jpg?s=1024x1024&w=is&k=20&c=ITO_nB-2pgpW6f7_EOB8ew0X6TCgxKuog3sOikCfpcE="
-              }
-              alt=""
-              style={{
-                width: "270px",
-                height: "270px",
-                objectFit: "cover",
-                transform: "scale(1.8)",
-                transformOrigin: "center top",
-              }}
-            />
+            <a href="#lanch">
+              <img
+                src={
+                  "https://images.pexels.com/photos/1510690/pexels-photo-1510690.jpeg"
+                }
+                alt=""
+                style={{
+                  width: "270px",
+                  height: "270px",
+                  objectFit: "cover",
+                  transform: "scale(1)",
+                  transformOrigin: "center top",
+                }}
+              />
+            </a>
             <p
               style={{
                 position: "absolute",
@@ -48,14 +53,16 @@ function AllMenu({ currentMenu }) {
                 fontSize: "27px",
                 textTransform: "uppercase",
                 margin: "-10px 20px",
-                fontFamily: "Noto Sans KR sans-serif ",
+                fontFamily: "inherit",
               }}
             >
               lanch{" "}
             </p>
           </div>
+
           {/* 2 */}
           <div
+            onClick={() => handleMenuId("sandwichs")}
             className=""
             style={{
               position: "relative",
@@ -66,15 +73,15 @@ function AllMenu({ currentMenu }) {
           >
             <img
               src={
-                "https://images.pexels.com/photos/8751410/pexels-photo-8751410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
               alt=""
               style={{
                 width: "270px",
                 height: "270px",
                 objectFit: "cover",
-                transform: "scale(1.8)",
-                transformOrigin: "center top",
+                transform: "scale(1)",
+                transformOrigin: "center right",
               }}
             />
             <p
@@ -92,6 +99,7 @@ function AllMenu({ currentMenu }) {
           </div>
           {/* 3 */}
           <div
+            onClick={() => handleMenuId("salads")}
             className=""
             style={{
               position: "relative",
@@ -102,14 +110,14 @@ function AllMenu({ currentMenu }) {
           >
             <img
               src={
-                "https://images.pexels.com/photos/8751410/pexels-photo-8751410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
               alt=""
               style={{
                 width: "270px",
                 height: "270px",
                 objectFit: "cover",
-                transform: "scale(1.8)",
+                transform: "scale(1)",
                 transformOrigin: "center top",
               }}
             />
@@ -128,6 +136,7 @@ function AllMenu({ currentMenu }) {
           </div>
           {/* 4 */}
           <div
+            onClick={() => handleMenuId("drinks")}
             className=""
             style={{
               position: "relative",
@@ -138,14 +147,14 @@ function AllMenu({ currentMenu }) {
           >
             <img
               src={
-                "https://images.pexels.com/photos/3323682/pexels-photo-3323682.jpeg"
+                "https://images.pexels.com/photos/2336670/pexels-photo-2336670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
               alt=""
               style={{
                 width: "270px",
                 height: "270px",
                 objectFit: "cover",
-                transform: "scale(1.8)",
+                transform: "scale(1)",
                 transformOrigin: "center top",
               }}
             />
@@ -160,6 +169,80 @@ function AllMenu({ currentMenu }) {
               }}
             >
               drinks{" "}
+            </p>
+          </div>
+          {/* 5 */}
+          <div
+            onClick={() => handleMenuId("asia")}
+            className=""
+            style={{
+              position: "relative",
+              display: "block",
+              overflow: "hidden",
+              cursor: "pointer",
+            }}
+          >
+            <img
+              src={
+                "https://images.pexels.com/photos/1148086/pexels-photo-1148086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              }
+              alt=""
+              style={{
+                width: "270px",
+                height: "270px",
+                objectFit: "cover",
+                transform: "scale(1)",
+                transformOrigin: "center",
+              }}
+            />
+            <p
+              style={{
+                position: "absolute",
+                top: "90%",
+                left: "0",
+                color: "wheat",
+                textTransform: "uppercase",
+                margin: "-10px 20px",
+              }}
+            >
+              asia{" "}
+            </p>
+          </div>
+          {/* 6 */}
+          <div
+            onClick={() => handleMenuId("desserts")}
+            className=""
+            style={{
+              position: "relative",
+              display: "block",
+              overflow: "hidden",
+              cursor: "pointer",
+            }}
+          >
+            <img
+              src={
+                "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              }
+              alt=""
+              style={{
+                width: "270px",
+                height: "270px",
+                objectFit: "cover",
+                transform: "scale(1.2)",
+                transformOrigin: "center top",
+              }}
+            />
+            <p
+              style={{
+                position: "absolute",
+                top: "90%",
+                left: "0",
+                color: "wheat",
+                textTransform: "uppercase",
+                margin: "-10px 20px",
+              }}
+            >
+              dessert{" "}
             </p>
           </div>
         </div>
