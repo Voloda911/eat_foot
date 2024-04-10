@@ -1,4 +1,7 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
+
 import "./index.css";
 
 import Header from "./Components/Header";

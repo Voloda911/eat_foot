@@ -14,18 +14,21 @@ function OrderDetails({
   handleClearAll,
   calculateTotal,
 }) {
+  const [buttonText, setButtonText] = useState("Pick up");
+
   const [choseTime, setChoseTime] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
   const toggleChose = (event) => {
     event.preventDefault();
     setChoseTime(!choseTime);
+    setButtonText(choseTime ? "Pick up" : "Selected");
   };
 
   return (
     <>
       {" "}
-      <div id="order" style={{ width: "25%" }}>
+      <div className="order" id="order" style={{ minWidth: "300px" }}>
         <div
           style={{
             width: "100%",
@@ -39,6 +42,7 @@ function OrderDetails({
             justifyContent: "start",
             alignItems: "center",
             padding: "0 1em 1em 1em ",
+            zIndex: "1000",
           }}
         >
           <div
@@ -87,7 +91,6 @@ function OrderDetails({
               <div
                 key={index}
                 style={{
-                  // backgroundColor: "rgb(250, 246, 242)",
                   boxShadow: "0px 8px 10px -5px rgba(0, 0, 0, 0.2)",
 
                   borderRadius: "5px",
@@ -178,11 +181,11 @@ function OrderDetails({
             className="btn btn-outline-dark"
             style={{
               width: "90%",
-              margin: "20px 0 0 0 ",
+              margin: "20px 0 20px 0 ",
               borderRadius: "15px",
             }}
           >
-            Pick up
+            {buttonText}
           </a>
 
           {choseTime && (
@@ -196,8 +199,8 @@ function OrderDetails({
                 timeCaption="time"
                 dateFormat="MMMM d, yyyy h:mm aa"
                 inline
+                minDate={new Date()}
               />
-              <input style={{ overflow: "hidden" }} type="time" />
             </div>
           )}
         </div>
@@ -446,16 +449,16 @@ function Main() {
       case "lanch":
         return (
           <div
-            id="lanch"
-            className="left_side"
             style={{
-              width: "100%",
-              backgroundColor: "transparent",
+              alignItems: "start",
+              justifyContent: "center",
               display: "flex",
-              flexDirection: "row",
             }}
+            id="menu"
+            className="left_side"
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -515,15 +518,18 @@ function Main() {
       case "sandwichs":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "center",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -583,15 +589,18 @@ function Main() {
       case "salads":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "start",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -651,15 +660,18 @@ function Main() {
       case "burgers":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "center",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -719,15 +731,18 @@ function Main() {
       case "drinks":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "center",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -787,15 +802,18 @@ function Main() {
       case "asia":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "center",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -855,15 +873,18 @@ function Main() {
       case "desserts":
         return (
           <div
+            id="menu"
             className="left_side"
             style={{
               width: "100%",
               backgroundColor: "transparent",
               display: "flex",
-              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "center",
             }}
           >
             <div
+              className="_block_eat"
               id="lanch"
               style={{
                 width: "70%",
@@ -935,6 +956,7 @@ function Main() {
         }}
       >
         <div
+          id="lanch"
           className="rigth_side"
           style={{
             width: "100%",
@@ -946,7 +968,7 @@ function Main() {
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", gap: "30px", padding: "" }}>
+          <div className="btns_v2" style={{ display: "flex", gap: "30px" }}>
             <a
               className="btn btn-outline-secondary"
               onClick={(e) => {
@@ -1020,12 +1042,13 @@ function Main() {
           >
             menu
           </a>
+          <div id="menu_down">
+            {renderContent()}
 
-          {renderContent()}
-
-          {shouldShowAllMenu && (
-            <AllMenu currentMenu={currentMenu} handleMenuId={handleMenuId} />
-          )}
+            {shouldShowAllMenu && (
+              <AllMenu currentMenu={currentMenu} handleMenuId={handleMenuId} />
+            )}
+          </div>
         </div>
       </div>
     </div>

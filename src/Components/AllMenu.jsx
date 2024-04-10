@@ -49,11 +49,9 @@ function AllMenu({ currentMenu, handleMenuId }) {
                 position: "absolute",
                 top: "90%",
                 left: "0",
-                color: "Window",
-                fontSize: "27px",
+                color: "wheat",
                 textTransform: "uppercase",
                 margin: "-10px 20px",
-                fontFamily: "inherit",
               }}
             >
               lanch{" "}

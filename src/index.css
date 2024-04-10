@@ -1,15 +1,28 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: aquamarine;
+  background-color: rgb(231, 231, 239);
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: background-position 0.1s;
 }
-
+body.light-mode {
+  background-color: #000000;
+  color: #000000;
+}
+.material-symbols-outlined {
+  font-size: 48px;
+  color: #000;
+}
 p {
   font-family: Georgia, "Times New Roman", Times, serif;
-  /* background-color: rgb(234, 228, 219); */
 }
 .box_info {
   display: none;
+  background-color: rgb(231, 231, 239);
 }
 .remove {
   display: block;
@@ -38,5 +51,112 @@ p {
   to {
     opacity: 0;
     left: -50%;
+  }
+}
+.btn_v1 {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.btn_v1 a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.span_ {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 100%;
+  animation: fadeIn 1s forwards;
+}
+
+.span_1 {
+  position: absolute;
+  top: 165px;
+  left: 100%;
+  width: 100%;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.head_btn:first-child {
+  margin: 0 20px 0 0;
+}
+.left_side {
+  width: 100%;
+  display: flex;
+}
+.head_btn {
+  position: relative;
+  margin-top: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 16px;
+  z-index: 10;
+}
+.head_btn a {
+  padding: 0.5rem 4rem;
+}
+#ianch .light-mode {
+  color: aliceblue;
+  background-color: aliceblue;
+}
+._block_eat {
+  text-transform: uppercase;
+  color: white;
+}
+.map {
+  position: relative;
+  margin: 2em 0 2em 0;
+}
+.map::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: aliceblue;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+}
+
+@media (max-width: 430px) {
+  body {
+    margin: 0;
+  }
+  .head_btn {
+    gap: 20px;
+  }
+  .head_btn a {
+    padding: 5px 40px;
+  }
+  .btns_v2 {
+    flex-wrap: wrap;
+  }
+  .adress_ {
+    font-size: 16px;
+    margin: 0;
+  }
+  .head_btn:first-child {
+    margin: 0;
+  }
+  .left_side {
+    flex-direction: column;
+  }
+  .order {
+    width: 100%;
   }
 }

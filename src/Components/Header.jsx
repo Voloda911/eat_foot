@@ -1,12 +1,50 @@
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faL, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import "bootstrap";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+function Header({ currentMenu, setCurrentMenu }) {
   const [isBoxVisible, setIsBoxVisible] = useState(null);
+  const [isSpan, setIsSpan] = useState(false);
+  const [isSpan2, setIsSpan2] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const boxInfos = document.querySelectorAll(".box_info");
+    const BlockEat = document.querySelectorAll("._block_eat");
+
+    if (isDarkMode) {
+      document.body.classList.remove("light-mode");
+      BlockEat.forEach((block) => {
+        block.style.color = "black";
+      });
+      boxInfos.forEach((box) => {
+        box.style.backgroundColor = "";
+        box.style.color = "black";
+      });
+    } else {
+      document.body.classList.add("light-mode");
+      boxInfos.forEach((box) => {
+        box.style.backgroundColor = "#000000";
+        box.style.color = "white";
+      });
+      BlockEat.forEach((block) => {
+        block.style.color = "white";
+      });
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const toggleSpan = () => {
+    setIsSpan(!isSpan);
+  };
+  const toggleSpan2 = () => {
+    setIsSpan2(!isSpan2);
+  };
 
   const toggleVisibility = () => {
     setIsBoxVisible(!isBoxVisible);
@@ -56,9 +94,9 @@ function Header() {
             </span>
           </div>
           <div
+            className="adress_"
             style={{
               color: "wheat",
-              fontSize: "20px",
               width: "35%",
               textAlign: "end",
               display: "flex",
@@ -66,6 +104,20 @@ function Header() {
               margin: " 0 30px 0 0",
             }}
           >
+            <span
+              style={{
+                cursor: "pointer",
+                margin: "20px 20px 50px 0",
+                display: "flex",
+                gap: "20px",
+                justifyContent: "end",
+              }}
+            >
+              <FontAwesomeIcon
+                onClick={toggleTheme}
+                icon={isDarkMode ? faSun : faMoon}
+              />
+            </span>
             adress7980 NE 31st Ct, apt.1230, Aventura, FL 33160
             <span>+1 208 202 8305</span>
           </div>
@@ -75,11 +127,10 @@ function Header() {
             isBoxVisible === null ? "" : isBoxVisible ? "open" : "remove"
           }`}
           style={{
+            zIndex: "1000",
             position: "absolute",
             left: "0",
             height: "100vh",
-            width: "25%",
-            backgroundColor: "ActiveBorder",
             textAlign: "center",
             padding: "3em 3em",
           }}
@@ -96,45 +147,92 @@ function Header() {
               top: "1%",
             }}
           >
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon style={{ cursor: "pointer" }} icon={faXmark} />
           </span>
           <div
             style={{
+              height: "100%",
+              width: "100%",
+              maxWidth: "250px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
               alignItems: "start",
+              gap: "200px",
             }}
           >
             <div
+              className="btn_v1"
               style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "20px",
               }}
             >
-              <a className="btn btn-outline-secondary" href="">
+              <a
+                onClick={() => {
+                  setIsBoxVisible(false);
+                }}
+                sty
+                className="btn btn-outline-secondary"
+                href="#"
+              >
                 home
               </a>
-              <a className="btn btn-outline-secondary" href="">
+
+              <a
+                onClick={toggleSpan}
+                className="btn btn-outline-secondary"
+                href="#"
+              >
                 about
               </a>
-              <a className="btn btn-outline-secondary" href="">
+              {isSpan && (
+                <span
+                  className="span_"
+                  style={{
+                    color: "white",
+                    margin: "0",
+                    padding: "0",
+                  }}
+                >
+                  section in progress{" "}
+                </span>
+              )}
+              <a className="btn btn-outline-secondary" href="#menu_down">
                 menu
               </a>
-              <a className="btn btn-outline-secondary" href="">
+              <a
+                onClick={toggleSpan2}
+                className="btn btn-outline-secondary"
+                href="#"
+              >
                 cart
               </a>
+              {isSpan2 && (
+                <span
+                  className="span_1"
+                  style={{ color: "white", margin: "0", padding: "0" }}
+                >
+                  section in progress{" "}
+                </span>
+              )}
             </div>
             <div
-              style={{ position: "absolute", bottom: "0", padding: "0 2em " }}
+              className="info_head"
+              style={{
+                position: "relative",
+                bottom: "0",
+                padding: "0 2em ",
+                width: "100%",
+              }}
             >
-              <div></div>
+              {" "}
               <p>
                 <span>number</span>208-202-8305
               </p>
               <p>
-                <span>adress</span>7980 NE 31st Ct, apt.1230, Aventura, FL 33160
+                <span></span>7980 NE 31st Ct,Aventura, FL 33160
               </p>
               <p>
                 <span>time work:</span>9:00am to 10:00pm
@@ -142,29 +240,11 @@ function Header() {
             </div>
           </div>
         </div>
-        <div
-          className="col-sm"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "150px",
-            margin: "300px 0 0 0 ",
-          }}
-        >
-          <a
-            href="#all_menu"
-            className="btn btn-outline-dark"
-            style={{ padding: "10px 60px" }}
-          >
+        <div className="head_btn col-sm" style={{}}>
+          <a href="#menu_down" className="btn btn-outline-dark">
             delivary
           </a>
-          <a
-            href="#all_menu"
-            style={{ padding: "10px 60px" }}
-            className="btn btn-dark"
-          >
+          <a href="#menu_down" className="btn btn-dark">
             menu
           </a>
         </div>
@@ -174,7 +254,6 @@ function Header() {
             fontSize: "20px",
             color: "white",
             textTransform: "uppercase",
-            width: "30%",
             textAlign: "center",
           }}
         >
